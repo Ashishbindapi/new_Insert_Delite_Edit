@@ -2,7 +2,7 @@
 include('./app/init.php');
 $userController = new UserController(new UserModel($db));
 $data = $userController->getUser();
-if (isset($_POST['save_student'])) {
+if (isset($_POST['save_data'])) {
     $userController->saveUser($_POST);
 }
 include('./thems/header.php');
@@ -17,7 +17,7 @@ include('./thems/header.php');
                     </h3>
                 </div>
                 <div class="card-body">
-                    <form id="save_data">
+                    <form id="myForm">
                         <div class="mb-3">
                             <label>Name</label>
                             <input type="text" id="name" class="form-control" />

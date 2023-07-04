@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-header">
                     <h2>Search Student</h2>
-                    <input type="text" id="search-bar" class="form-control rounded w-25" placeholder="Search in table...."><h3><a href="add_user.php" class="btn btn-primary float-end">Add Student</a>
+                    <input type="text" id="search-bar" class="form-control rounded w-25" placeholder="Search in table...."><h3><a href="addUser.php" class="btn btn-primary float-end">Add Student</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered">
