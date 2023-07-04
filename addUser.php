@@ -2,7 +2,7 @@
 include('./app/init.php');
 $userController = new UserController(new UserModel($db));
 $data = $userController->getUser();
-if (isset($_POST['save_data'])) {
+if (isset($_POST['task'])) {
     $userController->saveUser($_POST);
 }
 include('./thems/header.php');

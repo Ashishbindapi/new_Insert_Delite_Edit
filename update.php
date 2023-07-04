@@ -1,11 +1,12 @@
 <?php
 include('./app/init.php');
 $userController = new UserController(new UserModel($db));
-$id = $_GET['update_id'];
-if (isset($_POST['update_student'])) {
-    $userController->updateUser($_POST, $id);
+
+$getid = $_GET['update_id'];
+if (isset($_POST['task'])) {
+    $userController->updateUser($_POST);
 }
-$data = $userController->getupdateUser($id);
+$data = $userController->getupdateUser($getid);
 include('./thems/header.php');
 ?>
 
@@ -20,7 +21,7 @@ include('./thems/header.php');
                 </div>
                 <div class="card-body">
 
-                    <form method="post">
+                    <form id="upDate">
                         <div class="mb-3">
                             <label>Full Name</label>
                             <input type="text" id="name" value="<?php echo $data['name'] ?>" class="form-control" />
@@ -39,6 +40,7 @@ include('./thems/header.php');
                         </div>
                         <div class="mb-3">
                             <button type="submit" id="update_student" class="btn btn-primary">Update Student</button>
+                            <input type="hidden"  id="id" value="<?php echo $data['id'] ?>">
                         </div>
                     </form>
                 </div>

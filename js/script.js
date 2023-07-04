@@ -10,36 +10,63 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('#myForm').submit(function (e) {
-    e.preventDefault(); // Prevent form submission
-
-    // Get form data
+    e.preventDefault();
     var name = $('#name').val();
     var email = $('#email').val();
     var phone = $('#phone').val();
     var course = $('#course').val();
 
-    // Create an object with the form data
     var formData = {
-      task:'save_data',
+      task:'task',
       name: name,
       email: email,
       phone: phone,
       course: course
     };
-
-    // Send an AJAX POST request
-    $.ajax({
-      type: 'POST',
-      url: 'addUser.php',
-      data: formData,
-      success: function (response) {
-        // Handle success response
-        console.log(response);
-      },
-      error: function (xhr, status, error) {
-        // Handle error
-        console.log(xhr.responseText);
-      }
-    });
+    postData(formData);
   });
 });
+
+function postData(formData) {
+  $.ajax({
+    type: 'POST',
+    url: 'addUser.php',
+    data: formData,
+    success: function (response) {
+      console.log(response);
+      window.location.href = 'index.php';
+    }
+  });
+}
+
+$(document).ready(function () {
+  $('#upDate').submit(function (e) {
+    e.preventDefault();
+    var id = $('#id').val();
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var phone = $('#phone').val();
+    var course = $('#course').val();
+
+    var formData = {
+      Update: 'task',
+      id    : id,
+      name  : name,
+      email : email,
+      phone : phone,
+      course: course
+    };
+    postData(formData);
+  });
+});
+
+function postData(formData) {
+  $.ajax({
+    type: 'POST',
+    url: 'update.php',
+    data: formData,
+    success: function (response) {
+      //window.location.href = 'index.php';
+    }
+  });
+}

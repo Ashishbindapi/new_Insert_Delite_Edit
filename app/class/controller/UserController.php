@@ -14,12 +14,13 @@
         
         public function saveUser($data)
         {
-            $this->model->savedata($data);
+            return $this->model->savedata($data);
         }
         
-        public function updateUser($data,$id)
+        public function updateUser($data)
         {
-            $this->model->updatedata($data,$id);
+
+            $this->model->updatedata($data);
         }
 
         public function deleteUser($id)

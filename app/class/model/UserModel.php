@@ -18,17 +18,14 @@
         {
             $sql = "INSERT INTO students (name, email, phone, course) VALUES (?,?,?,?)";
             $stmt = $this->conn->prepare($sql);
-            $insert = $stmt->execute([$data['name'],$data['email'],$data['phone'],$data['course']]);
-            if($insert){
-                header('location:index.php');
-            }
+            return $stmt->execute([$data['name'],$data['email'],$data['phone'],$data['course']]);
         }
 
-        public function updatedata($data,$id)
+        public function updatedata($data)
         {
-            $sql = "UPDATE students SET id=?, name=?, email=?, phone=?, course=?  WHERE id=?";
+            $sql = "UPDATE students SET id=?, name=?, email=?, phone=?, course=?";
             $stmt = $this->conn->prepare($sql);
-            $update = $stmt->execute([$id,$data['name'],$data['email'],$data['phone'],$data['course'],$id]);
+            $update = $stmt->execute([$data['id'],$data['name'],$data['email'],$data['phone'],$data['course']]);
             if($update){
                 header('location:index.php');
             }
