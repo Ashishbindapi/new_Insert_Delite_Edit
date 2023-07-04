@@ -42,7 +42,7 @@
                                 <input type="text" name="phone" class="form-control"/>
                             </div>
                             <div class="mb-3">
-                                <label>class</label>
+                                <label>course</label>
                                 <input type="text" name="course" class="form-control"/>
                             </div>
                             <div class="mb-3">
