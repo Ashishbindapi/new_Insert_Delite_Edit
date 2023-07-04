@@ -17,10 +17,10 @@
             return $this->model->savedata($data);
         }
         
-        public function updateUser($data)
+        public function updateUser($data,$id)
         {
-
-            $this->model->updatedata($data);
+            
+            $this->model->updatedata($data,$id);
         }
 
         public function deleteUser($id)

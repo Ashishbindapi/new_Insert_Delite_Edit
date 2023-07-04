@@ -21,11 +21,11 @@
             return $stmt->execute([$data['name'],$data['email'],$data['phone'],$data['course']]);
         }
 
-        public function updatedata($data)
+        public function updatedata($data,$id)
         {
-            $sql = "UPDATE students SET id=?, name=?, email=?, phone=?, course=?";
+            $sql = "UPDATE students SET name=?, email=?, phone=?, course=?  WHERE students.id=?";
             $stmt = $this->conn->prepare($sql);
-            $update = $stmt->execute([$data['id'],$data['name'],$data['email'],$data['phone'],$data['course']]);
+            $update = $stmt->execute([$data['name'],$data['email'],$data['phone'],$data['course'],$id]);
             if($update){
                 header('location:index.php');
             }

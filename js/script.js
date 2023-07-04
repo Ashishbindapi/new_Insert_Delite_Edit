@@ -38,35 +38,3 @@ function postData(formData) {
     }
   });
 }
-
-$(document).ready(function () {
-  $('#upDate').submit(function (e) {
-    e.preventDefault();
-    var id = $('#id').val();
-    var name = $('#name').val();
-    var email = $('#email').val();
-    var phone = $('#phone').val();
-    var course = $('#course').val();
-
-    var formData = {
-      Update: 'task',
-      id    : id,
-      name  : name,
-      email : email,
-      phone : phone,
-      course: course
-    };
-    postData(formData);
-  });
-});
-
-function postData(formData) {
-  $.ajax({
-    type: 'POST',
-    url: 'update.php',
-    data: formData,
-    success: function (response) {
-      //window.location.href = 'index.php';
-    }
-  });
-}
