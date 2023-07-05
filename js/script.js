@@ -17,7 +17,7 @@ $(document).ready(function () {
     var course = $('#course').val();
 
     var formData = {
-      task:'task',
+      task: 'task',
       name: name,
       email: email,
       phone: phone,
