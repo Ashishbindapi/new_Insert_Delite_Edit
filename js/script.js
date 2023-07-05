@@ -33,7 +33,6 @@ function postData(formData) {
     url: 'addUser.php',
     data: formData,
     success: function (response) {
-      console.log(response);
       window.location.href = 'index.php';
     }
   });
